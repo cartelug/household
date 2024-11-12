@@ -112,7 +112,7 @@
                 <button onclick="redirectToOutlook()">Go to Outlook Login</button>
             </div>
             <div class="step">
-                <p>4. Check your inbox in Outlook and also check the "Other" folder for an email titled "How to update your Netflix household".</p>
+                <p>4. Check your inbox in Outlook and also check the "Other" folder for an email titled "How to update your Netflix household". Click that email, then click <strong>"Yes, this was me"</strong>, and afterward, click <strong>"Update Netflix Household"</strong>.</p>
             </div>
         </div>
     </div>
@@ -142,8 +142,7 @@
         }
 
         function redirectToOutlook() {
-            const selectedEmail = document.getElementById('emailSelect').value;
-            window.open(`https://login.live.com/login.srf?login=${selectedEmail}`, '_blank');
+            window.open("https://outlook.live.com/", '_blank');
         }
     </script>
 </body>
