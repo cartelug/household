@@ -3,147 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Household Fix</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom right, #6a11cb, #2575fc);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        h1 {
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .option {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 30px;
-            margin: 20px 0;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .option:hover {
-            transform: translateY(-5px);
-        }
-        button, select {
-            padding: 12px 20px;
-            margin-top: 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button {
-            background-color: #6200ea;
-            color: white;
-        }
-        button:hover {
-            background-color: #3700b3;
-        }
-        select {
-            background-color: #444;
-            color: white;
-        }
-        .instructions {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
-        }
-        .show {
-            display: block;
-        }
-        .step {
-            margin: 15px 0;
-            line-height: 1.6;
-        }
-        ol {
-            padding-left: 20px;
-            text-align: left;
-        }
-    </style>
+    <title>Quick Netflix Fix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Update Netflix Household</h1>
-    <div class="option" id="tvOption">
-        <h2>For TV</h2>
-        <button onclick="showTVInstructions()">Update Netflix Household</button>
-        <div class="instructions" id="tvInstructions">
-            <div class="step">
-                <p>1. Click "Update Netflix Household" on your TV screen, then click "Send Email". Follow these steps carefully within 15 minutes as the Netflix link expires.</p>
-            </div>
-            <div class="step">
-                <label for="emailSelect">2. Select your Netflix email:</label><br>
-                <select id="emailSelect" onchange="updateEmail()">
-                    <option>cartelug1@outlook.com</option>
-                    <option>cartelug2@outlook.com</option>
-                    <option>cartelug3@outlook.com</option>
-                    <option>cartelug4@outlook.com</option>
-                    <option>cartelug5@outlook.com</option>
-                    <option>cartelug6@outlook.com</option>
-                    <option>cartelug7@outlook.com</option>
-                    <option>cartelug8@outlook.com</option>
-                    <option>cartelug9@outlook.com</option>
-                    <option>cartelug10@outlook.com</option>
-                    <option>cartelug11@outlook.com</option>
-                    <option>cartelug12@outlook.com</option>
-                    <option>cartelug13@outlook.com</option>
-                    <option>cartelug14@outlook.com</option>
-                </select>
-            </div>
-            <div class="step">
-                <p>3. Log in to Outlook with:</p>
-                <ul>
-                    <li>Email: <strong id="selectedEmail">cartelug1@outlook.com</strong></li>
-                    <li>Password: <strong>Realizedin2019</strong></li>
-                </ul>
-                <button onclick="redirectToOutlook()">Go to Outlook Login</button>
-            </div>
-            <div class="step">
-                <p>4. Check your inbox in Outlook and also check the "Other" folder for an email titled "How to update your Netflix household". Click that email, then click <strong>"Yes, this was me"</strong>, and afterward, click <strong>"Update Netflix Household"</strong>.</p>
-            </div>
-        </div>
-    </div>
-    <div class="option" id="mobileOption">
-        <h2>For Mobile</h2>
-        <div class="instructions show">
-            <p>How to Fix the Netflix Household Message on your mobile device:</p>
-            <ol>
-                <li>Close the Netflix app completely.</li>
-                <li>Turn off Wi-Fi or mobile data so your phone is offline.</li>
-                <li>Open Netflix again while <em>still offline</em>, and select your profile.</li>
-                <li>Once you’re in the app, turn your Wi-Fi or mobile data back on.</li>
-                <li>You’re ready to start watching!</li>
-            </ol>
-        </div>
-    </div>
-    <script>
-        function showTVInstructions() {
-            const instructions = document.getElementById('tvInstructions');
-            instructions.classList.toggle('show');
-            updateEmail();
-        }
-        
-        function updateEmail() {
-            const selectedEmail = document.getElementById('emailSelect').value;
-            document.getElementById('selectedEmail').textContent = selectedEmail;
-        }
+    <div class="container">
+        <header>
+            <i class="fas fa-heartbeat icon-calm"></i> <h1>Seeing the Netflix Household Issue?</h1>
+            <p class="subtitle">Don't worry! We'll help you sort it out in less than 3 minutes.</p>
+        </header>
 
-        function redirectToOutlook() {
-            window.open("https://outlook.live.com/", '_blank');
-        }
-    </script>
+        <main>
+            <div id="device-choice" class="choice-section">
+                <h2>Which device are you using?</h2>
+                <div class="button-group">
+                    <button id="btn-phone" class="choice-button">
+                        <i class="fas fa-mobile-alt"></i> Phone / Tablet
+                    </button>
+                    <button id="btn-tv" class="choice-button">
+                        <i class="fas fa-tv"></i> TV
+                    </button>
+                </div>
+            </div>
+
+            <div id="phone-instructions" class="instructions hidden">
+                <h2>Okay, on your Phone/Tablet:</h2>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>On the error screen, click <strong>"Watch Temporarily"</strong>.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>Then, click <strong>"Send Email"</strong>.</p>
+                </div>
+                <div class="step final-step">
+                    <span class="step-number">3</span>
+                    <p>Done? Great! Click below to let us know.</p>
+                    <a href="https://wa.me/256744688623?text=Hi! I just completed the 'Send Email' step on my phone/tablet for the Netflix issue." class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Notify Us Now
+                    </a>
+                    <p class="note">We'll help with the code from the email.</p>
+                </div>
+                 <button class="back-button" onclick="showDeviceChoice()">Choose Different Device</button>
+            </div>
+
+            <div id="tv-instructions" class="instructions hidden">
+                <h2>Okay, on your TV:</h2>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>On the error screen, click <strong>"Update Netflix Household"</strong>.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>Then, click <strong>"Send Email"</strong>.</p>
+                </div>
+                 <div class="step final-step">
+                    <span class="step-number">3</span>
+                    <p>Done? Perfect! Click below to let us know.</p>
+                    <a href="https://wa.me/256744688623?text=Hi! I just completed the 'Send Email' step on my TV for the Netflix issue." class="whatsapp-button" target="_blank">
+                         <i class="fab fa-whatsapp"></i> Notify Us Now
+                    </a>
+                    <p class="note">We'll help with the update from the email.</p>
+                </div>
+                 <button class="back-button" onclick="showDeviceChoice()">Choose Different Device</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Your Fast Support Team</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
